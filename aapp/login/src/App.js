@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Register from './components/Register';
 import Login from './components/Login';
 import Users from './components/Users';
+import Logout from './components/Logout';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
      <Route path="/Register" component={Register} />
      <Route path="/Login" component={Login} />
      <Route path="/Users" component={Users} />
+     <Route path="/Logout" component={Logout} />
 
     </div>
   );

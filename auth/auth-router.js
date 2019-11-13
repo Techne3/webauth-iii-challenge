@@ -2,7 +2,10 @@ const router = require('express').Router()
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
+
 const Users = require('../users/users-model')
+
+
 
 
 router.post('/register', (req, res) => {
@@ -32,7 +35,7 @@ router.post('/register', (req, res) => {
   
           // 3: send the token to the client
           res.status(200).json({
-            message: `Welcome ${user.username}! have a token...`,
+            message: `Welcome ${user.username}! You have a token...`,
             token
           });
         } else {
@@ -45,10 +48,10 @@ router.post('/register', (req, res) => {
   });
 
 
-  
+
   router.get('/logout', (req,res)=> {
-    if(req.session){
-      req.session.destroy(error => {
+    if(jwt){
+      jwt.destroy(error => {
         res.status(200).json({message: 'logged out successfully '})
         if(error ){
           res.status(500).json({message: 'you can check  out any time you like, but you can never leave'})

@@ -21,15 +21,24 @@ const Users = () => {
         <div>
             <h1>You have Logged in Successfully</h1>
             <button onClick={getUsers}  className="waves-effect waves-light btn">get users</button>
+            <div className="container">
+                <div className='row'>
             {user.length > 0 && user.map(use => {
                 return (
-                    <>
-                    <h2 key={use.id}>username: {use.username}</h2>
-                {/* <h3>password: {use.password}</h3> */}
-                </>
+                        <div className="col s4">
+                            <div className="card">
+                                <div className="card-content">
+                                    <div className="card-title">{use.username}</div>
+               
+                                        {/* <div>{use.password}</div> */}
+                                </div>
+                           </div>
+                       </div>
                 )
             })}
+            </div>
         </div>
+     </div>
     );
 }
 
